@@ -45,6 +45,14 @@ class Validator {
     }
   }
 
+
+  static String? messageValidator(String? message) {
+    if (message != null && message.trim().isNotEmpty) {
+      return null;
+    } else {
+      return 'Please enter valid message';
+    }
+  }
   static String? passwordValidator(String? password, {bool isStrong = true}) {
     if (password != null && password.isNotEmpty) {
       if (isStrong) {

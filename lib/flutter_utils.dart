@@ -10,4 +10,4 @@ export 'src/enums/card_brand.dart';
 
 export 'src/input_formatters/card_input_formatters.dart';
 
-export 'package:image_picker/image_picker.dart' show ImageSource;
+export 'package:image_picker/image_picker.dart' show ImageSource, CameraDevice;

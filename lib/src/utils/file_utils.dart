@@ -7,16 +7,28 @@ class FileUtils {
 
   static final ImagePicker _picker = ImagePicker();
 
-  static Future<File?> pickImage(ImageSource source) async {
-    XFile? xFile = await _picker.pickImage(source: source);
+  static Future<File?> pickImage(
+    ImageSource source, {
+    CameraDevice preferredCameraDevice = CameraDevice.rear,
+  }) async {
+    XFile? xFile = await _picker.pickImage(
+      source: source,
+      preferredCameraDevice: preferredCameraDevice,
+    );
     if (xFile != null) {
       return File(xFile.path);
     }
     return null;
   }
 
-  static Future<File?> pickVideo(ImageSource source) async {
-    XFile? xFile = await _picker.pickVideo(source: source);
+  static Future<File?> pickVideo(
+    ImageSource source, {
+    CameraDevice preferredCameraDevice = CameraDevice.rear,
+  }) async {
+    XFile? xFile = await _picker.pickVideo(
+      source: source,
+      preferredCameraDevice: preferredCameraDevice,
+    );
     if (xFile != null) {
       return File(xFile.path);
     }
